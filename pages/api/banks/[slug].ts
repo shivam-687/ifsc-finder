@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import BankService from '../../../data/BankService'
 
 type Data = {
-  data: {name:string}[]
+  data: string[]
 }
 
 export default async function handler(
