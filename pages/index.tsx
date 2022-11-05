@@ -28,6 +28,9 @@ export default function Home(data: { banks: string[] }) {
   }, [data]);
   return (
     <div className="flex flex-col min-h-screen items-center ">
+
+    
+
       <IfscSearch bank={data.banks} />
       <div className="divider mt-10">OR</div>
       <div className=" mt-10 ">

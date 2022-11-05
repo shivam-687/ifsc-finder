@@ -19,3 +19,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.mark{
+  border: 1px solid red;
+}

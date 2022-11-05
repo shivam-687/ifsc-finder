@@ -31,7 +31,7 @@ export default function StateSelected(data: {bank: string, state: string, distri
   return (
     <div className="flex flex-col min-h-screen items-center">
       <IfscSearch bank={data.bank} state={data.state} district={data.district} />
-      <div className=" mt-10 ">
+      <div className=" mt-10 w-full">
         <LinkChipContainer chipData={districtData}/>
       </div>
     

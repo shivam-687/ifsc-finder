@@ -10,7 +10,7 @@ export type LinkChipProps = {
 
 const LinkChip = (props: PropsWithChildren<LinkChipProps>) => {
     return (
-        <span className='inline-flex shadow shadow-primary/20 text-purple-500 rounded w-full max-w-xs items-center justify-left capitalize p-2'>
+        <span className='inline-flex shadow shadow-primary/20 text-primary rounded w-80 md:w-96 items-center justify-left capitalize p-2 hover:shadow-md transition duration-200 hover:shadow-primary/20'>
             {
                 props.icon && !props.image && <span className='text-4xl mr-2'>{props.icon}</span>
             }

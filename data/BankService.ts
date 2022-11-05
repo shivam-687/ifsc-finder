@@ -11,10 +11,9 @@ export const jsonLoaderByBankName = async (bankName: string) => {
         let temp: BankDataItem = {
             address: d['ADDRESS'],
             bankName: d['BANK NAME'] || d['BANK'],
-            city: d['CITY'],
             distric: d['DISTRICT'] || d['CITY2'],
             ifsc: d['IFSC'],
-            branch: d['BRANCH'],
+            branch: d['BRANCH']||d['BRANCH'],
             phone: d['PHONE'],
             state: d['STATE']
         }
@@ -31,7 +30,7 @@ const getBankData = async (bankName: string) => {
 }
 
 const allBankList = async () => {
-    return AllBankList.map(b => b.name);
+    return AllBankList.map(b => b.name).sort();
 }
 
 const getStatesListOfBank = async (bankName: string, data?: BankDataItem[]) => {
@@ -44,7 +43,7 @@ const getStatesListOfBank = async (bankName: string, data?: BankDataItem[]) => {
             states.push(b.state);
         }
     });
-    return states;
+    return states.sort();
 }
 
 const getDistricList = async (bankName: string, state: string, data?: BankDataItem[]) => {
@@ -59,6 +58,7 @@ const getDistricList = async (bankName: string, state: string, data?: BankDataIt
             districts.push(b.distric);
         }
     });
+    
     return districts.sort();
 }
 
@@ -73,7 +73,7 @@ const getBranchList = async (bankName: string, state: string, district: string, 
             branches.push(b.branch);
         }
     });
-    return branches;
+    return branches.sort();
 }
 
 const getIfsc = async ({bank, state, city, branch}: {bank: string, state: string, city: string, branch: string}) => {
@@ -82,7 +82,7 @@ const getIfsc = async ({bank, state, city, branch}: {bank: string, state: string
     
     if(!bankData) return undefined;
     const br = bankData.find(d => d.state.toLowerCase() === state && d.distric.toLowerCase() === city && d.branch.toLowerCase() === branch);
-    // console.log("Bank found", br)
+    console.log("Bank found", br)
     return br;
 }
 
