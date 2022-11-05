@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContentComp = () => {
     return (
-        <section className="container mx-auto flex justify-center px-5">
+        <section className="container mx-auto flex justify-center px-5 mt-28">
             <div className='border border-gray-300 rounded-xl p-5 shadow-lg shadow-primary/20'>
                 <article className='prose prose-gray lg:prose-xl prose-thead:bg-slate-400' aria-details='IFSC Code' >
                     <h2>What is IFSC (Indian Finance Security Code)</h2>

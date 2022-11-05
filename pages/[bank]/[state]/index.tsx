@@ -29,7 +29,7 @@ export default function StateSelected(data: {bank: string, state: string, distri
 
 //   console.log("Datat", data)
   return (
-    <div className="flex flex-col min-h-screen items-center">
+    <div className="flex flex-col pb-40 items-center">
       <IfscSearch bank={data.bank} state={data.state} district={data.district} />
       <div className=" mt-10 w-full">
         <LinkChipContainer chipData={districtData}/>

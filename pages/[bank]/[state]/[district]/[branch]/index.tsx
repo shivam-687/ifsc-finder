@@ -13,7 +13,7 @@ export default function BranchSelected(data: { bank: string, state: string, dist
 
 
     return (
-        <div className="flex flex-col min-h-screen items-center">
+        <div className="flex flex-col items-center pb-40">
             <IfscSearch bank={data.bank} state={data.state} district={data.district} branch={data.branch} />
 
             {

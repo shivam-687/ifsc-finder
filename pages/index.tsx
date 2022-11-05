@@ -27,7 +27,7 @@ export default function Home(data: { banks: string[] }) {
     }
   }, [data]);
   return (
-    <div className="flex flex-col min-h-screen items-center ">
+    <div className="flex flex-col items-center pb-40">
 
     
 

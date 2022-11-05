@@ -28,7 +28,7 @@ export default function DistrictSelected(data: { bank: string, state: string, di
     }, [data]);
 
     return (
-        <div className="flex flex-col min-h-screen items-center">
+        <div className="flex flex-col pb-40 items-center">
             <IfscSearch bank={data.bank} state={data.state} district={data.district} branch={data.branch} />
             <div className=" mt-10 w-full ">
                 <LinkChipContainer chipData={branchData} />

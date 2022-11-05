@@ -26,7 +26,7 @@ export default function BankSelected(data: {bank: string, states: string[]}) {
     }
   }, [data]);
   return (
-    <div className="flex flex-col min-h-screen items-center">
+    <div className="flex flex-col pb-40 items-center">
      <IfscSearch bank={data.bank} state={data.states} />
      <div className=" mt-10 ">
         <LinkChipContainer chipData={stateData}/>
