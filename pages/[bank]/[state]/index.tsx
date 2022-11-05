@@ -46,7 +46,6 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext){
     if(!bank || bank.trim() === '' || !(await BankService.allBankList()).includes(bank.toLowerCase()) || !state) return {notFound: true}
 
     const districtList = await BankService.getDistricList(bank, state);
-    console.log("districts", districtList)
   return {
     props: {
       bank,

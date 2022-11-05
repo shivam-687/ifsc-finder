@@ -82,7 +82,7 @@ const getIfsc = async ({bank, state, city, branch}: {bank: string, state: string
     
     if(!bankData) return undefined;
     const br = bankData.find(d => d.state.toLowerCase() === state && d.distric.toLowerCase() === city && d.branch.toLowerCase() === branch);
-    console.log("Bank found", br)
+    // console.log("Bank found", br)
     return br;
 }
 
