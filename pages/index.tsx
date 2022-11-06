@@ -8,6 +8,7 @@ import BankService from '../data/BankService'
 import {AiFillBank} from 'react-icons/ai'
 import { useEffect, useState } from 'react'
 import LinkChipContainer from '../components/LinkChipContainer'
+import generateSitemap from '../lib/SitemapGenerator'
 
 
 export default function Home(data: { banks: string[] }) {
@@ -41,6 +42,7 @@ export default function Home(data: { banks: string[] }) {
 }
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  // console.log(await generateSitemap())
   return {
     props: {
       banks: await BankService.allBankList()

@@ -92,7 +92,8 @@ const BankService = {
     getDistricList,
     getBranchList,
     allBankList,
-    getIfsc
+    getIfsc,
+    getBankData
 }
 
 

@@ -62,15 +62,15 @@ class MyDocument extends Document {
             <Html data-theme="interlef_light" lang='en'>
                 <Head >
                     <meta charSet="UTF-16BE"/>
-                    {/* <Script id="gt-manager" strategy='lazyOnload'>
+                    <Script id="gt-manager" strategy='lazyOnload'>
                         {
-                            `(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
-                               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                               })(window,document,'script','dataLayer','GTM-NMX5MPL');`
+                            `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                            })(window,document,'script','dataLayer','GTM-M8HZD9D');`
                         }
-                    </Script> */}
+                    </Script>
 
                     <meta name="robots" content="index, follow" />
                     <meta name="googlebot" content="index, follow" />
@@ -111,9 +111,9 @@ class MyDocument extends Document {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(this.localBusiness) }} /> */}
                 </Head>
                 <body>
-                    {/* <noscript dangerouslySetInnerHTML={{
-                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMX5MPL"
-                        height="0" width="0" style="display:none;visibility:hidden"></iframe>`}}></noscript> */}
+                    <noscript dangerouslySetInnerHTML={{
+                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8HZD9D"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe>`}}></noscript>
                     <Main />
                     <NextScript />
                 </body>
