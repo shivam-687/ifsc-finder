@@ -29,7 +29,7 @@ async function generate(bankList: string[], index: number){
 }
 
 export async function saveXmlFile(xmlData: string){
-    fs.writeFileSync('sitemap.xml', xmlData);
+    fs.writeFileSync('public/sitemap.xml', xmlData);
     return;
 }
 
@@ -40,7 +40,7 @@ export default async function generateSitemap(){
     const urlArray = await generate(bankList, 0);
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${urlArray.join('/\n')}
+    ${urlArray.join('')}
     </urlset>`;
     await saveXmlFile(sitemap);
     return sitemap;
