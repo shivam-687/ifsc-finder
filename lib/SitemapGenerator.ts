@@ -10,7 +10,14 @@ async function generate(bankList: string[], index: number){
     if(!bankDatas || bankDatas.length <= 0) return urls;
     urls = bankDatas.map(bank => {
         const url = `${bank.bankName}/${bank.state}/${bank.distric}/${bank.branch}`.toLowerCase().replaceAll('&', '&amp;').replaceAll('-', '').trim()
-        const str = `<url><loc>https://www.findifscode.in/${encodeURI(url)}</loc></url>`
+        const str = `
+        <url>
+        <loc>https://www.findifscode.in/${encodeURI(url)}</loc>
+        <lastmod>${new Date().toLocaleDateString()}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8</priority>
+        </url>
+        `
         return str;
     });
 
@@ -33,7 +40,7 @@ export default async function generateSitemap(){
     const urlArray = await generate(bankList, 0);
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${urlArray.join('')}
+    ${urlArray.join('/\n')}
     </urlset>`;
     await saveXmlFile(sitemap);
     return sitemap;
