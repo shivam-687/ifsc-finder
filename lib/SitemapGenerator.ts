@@ -10,7 +10,7 @@ async function generate(bankList: string[], index: number){
     if(!bankDatas || bankDatas.length <= 0) return urls;
     urls = bankDatas.map(bank => {
         const url = `${bank.bankName}/${bank.state}/${bank.distric}/${bank.branch}`.toLowerCase().replaceAll('&', '&amp;').replaceAll('-', '').trim()
-        const str = `<url><loc>https://www.findifscode.in/${encodeURI(url)}</loc><lastmod>${new Date().toLocaleDateString()}</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>`
+        const str = `<url><loc>https://www.findifscode.in/${encodeURI(url)}</loc><lastmod>${new Date().toISOString()}</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>`
         return str;
     });
 
@@ -22,7 +22,7 @@ async function generate(bankList: string[], index: number){
 }
 
 export async function saveXmlFile(xmlData: string){
-    fs.writeFileSync('sitemap.xml', xmlData);
+    fs.writeFileSync('public/sitemap.xml', xmlData);
     return;
 }
 
