@@ -1,4 +1,4 @@
-import { GetServerSidePropsContext } from 'next'
+import { GetServerSidePropsContext, GetStaticPropsContext } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -41,7 +41,7 @@ export default function Home(data: { banks: string[] }) {
   )
 }
 
-export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+export async function getStaticProps(ctx: GetStaticPropsContext) {
   // console.log(await generateSitemap())
   return {
     props: {
