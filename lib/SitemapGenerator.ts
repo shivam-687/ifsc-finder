@@ -28,7 +28,7 @@ export async function saveXmlFile(xmlData: string){
 
 
 export default async function generateSitemap(){
-    const bankList = await (await BankService.allBankList()).slice(0, 4);
+    const bankList = await BankService.allBankList();
     console.log(bankList)
     const urlArray = await generate(bankList, 0);
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
