@@ -65,6 +65,28 @@ export const AllBankList = [
     {
         name: 'barclays bank'
     },
+    {
+        name: 'canara bank'
+    },
+    {
+        name: 'city union bank limited'
+    },
+    {
+        name: 'credit suisee ag'
+    },
+    {
+        name: 'capital small finance bank limited'
+    },
+    {
+        name: 'coastal local area bank ltd'
+    },
+    {
+        name: 'csb bank limited'
+    },
+    {
+        name: 'chhattisgarh rajya gramin bank'
+    },
+    
     
 ]
 
@@ -89,7 +111,12 @@ export const BankMapWithFile: {[key: string]:any} = {
     'bharat cooperative bank mumbai limited':async () => await import('./db18.json', { assert: { type: "json" } }),
     'b n p paribas':async () => await import('./db19.json', { assert: { type: "json" } }),
     'bassein catholic cooperative bank limited': async () => await import('./db20.json', { assert: { type: "json" } }),
-    'barclays bank': async () => await import('./db21.json', { assert: { type: "json" } })
-
-
+    'barclays bank': async () => await import('./db21.json', { assert: { type: "json" } }),
+    'canara bank': async () => await import('./db23.json', { assert: { type: "json" } }),
+    'credit suisee ag': async () => await import('./db24.json', { assert: { type: "json" } }),
+    'capital small finance bank limited': async () => await import('./db27.json', { assert: { type: "json" } }),
+    'csb bank limited': async () => await import('./db29.json', { assert: { type: "json" } }),
+    'coastal local area bank ltd': async () => await import('./db30.json', { assert: { type: "json" } }),
+    'chhattisgarh rajya gramin bank': async () => await import('./db31.json', { assert: { type: "json" } }),
+    
 }
