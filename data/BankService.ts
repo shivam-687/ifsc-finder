@@ -1,3 +1,4 @@
+import { BankApi } from './../bank_data/api/BankDataApi';
 import { BankDataItem } from '../models/BankDataItem';
 import { AllBankList, BankMapWithFile } from './BankMapWithFile';
 
@@ -88,10 +89,10 @@ const getIfsc = async ({bank, state, city, branch}: {bank: string, state: string
 
 
 const BankService = {
-    getStatesListOfBank,
-    getDistricList,
-    getBranchList,
-    allBankList,
+    getStatesListOfBank : BankApi.getStateListOfBank,
+    getDistricList: BankApi.getDistrictListInState,
+    getBranchList: BankApi.getBranchListInDistrict,
+    allBankList: BankApi.getAllbankList,
     getIfsc,
     getBankData
 }

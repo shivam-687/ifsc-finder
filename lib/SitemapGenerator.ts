@@ -1,5 +1,6 @@
 import BankService from "../data/BankService";
 import fs from 'fs';
+import SitemapGeneratorV2 from "./SitemapGeneratorV2";
 
 async function generate(bankList: string[], index: number){
     let urls: string[] = [];
@@ -28,14 +29,16 @@ export async function saveXmlFile(xmlData: string){
 
 
 export default async function generateSitemap(){
-    const bankList = await BankService.allBankList();
-    console.log(bankList)
-    const urlArray = await generate(bankList, 0);
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-    ${urlArray.join('')}
-    </urlset>`;
-    await saveXmlFile(sitemap);
-    return sitemap;
+    // const bankList = await BankService.allBankList();
+    // // console.log(bankList)
+    // const urlArray = await generate(bankList, 0);
+    // const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    // <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    // ${urlArray.join('')}
+    // </urlset>`;
+    // await saveXmlFile(sitemap);
+    // return sitemap;
+    // SitemapGeneratorV2.init();
+    return true;
 }
 

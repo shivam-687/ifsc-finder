@@ -9,6 +9,8 @@ import {AiFillBank} from 'react-icons/ai'
 import { useEffect, useState } from 'react'
 import LinkChipContainer from '../components/LinkChipContainer'
 import generateSitemap from '../lib/SitemapGenerator'
+import { BankApi, getBankCodeByName, getBankDataByCode, getBankInfoByName } from '../bank_data/api/BankDataApi'
+import { filterBankNameByMapFile, createAvailableBanksListFile } from '../bank_data/api/helpers'
 
 
 export default function Home(data: { banks: string[] }) {
@@ -42,10 +44,10 @@ export default function Home(data: { banks: string[] }) {
 }
 
 export async function getStaticProps(ctx: GetStaticPropsContext) {
-  // console.log(await generateSitemap())
+  // console.log(await getBankInfoByName('Royal Bank of Scotland N.V.', (val) => val.DISTRICT === 'MUMBAI'));
   return {
     props: {
-      banks: await BankService.allBankList()
+      banks: await BankApi.getAllbankList()
     }
   }
 }

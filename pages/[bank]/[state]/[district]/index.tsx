@@ -8,6 +8,7 @@ import { LinkChipProps } from '../../../../components/LinkChip'
 import BankService from '../../../../data/BankService'
 import { MdLocationOn } from 'react-icons/md'
 import LinkChipContainer from '../../../../components/LinkChipContainer'
+import { BankApi } from '../../../../bank_data/api/BankDataApi'
 
 
 export default function DistrictSelected(data: { bank: string, state: string, district: string, branch: string[] }) {
@@ -42,8 +43,10 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     const state = ctx.query['state'] as string;
     const district = ctx.query['district'] as string;
 
-    if (!bank || bank.trim() === '' || !(await BankService.allBankList()).includes(bank.toLowerCase()) || !state || !district) return { notFound: true }
-    const branch = await BankService.getBranchList(bank, state, district)
+    if (!bank || bank.trim() === '' || !(await BankApi.getAllbankList()).find(val => val.toLowerCase() === bank.toLowerCase()) || !state || !district) return { notFound: true }
+    // const branch = Array.from(new Set( await BankApi.getBranchListInDistrict(bank, state, district)))
+    const branch = await BankApi.getBranchListInDistrict(bank, state, district)
+    // console.log("BRANCHES:: ", branch);
     return {
         props: {
             bank,
