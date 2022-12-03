@@ -95,7 +95,7 @@ function sitmapIndexWrapper(sitemapLinks: string[]) {
       ${sitemapLinks.map(link => {
         return `
         <sitemap>
-            <loc>https://www.ifscode.in/sitemaps/${link}</loc>
+            <loc>https://www.findifscode.in/sitemaps/${link}</loc>
         </sitemap>
         `
     }).join('\n')}
