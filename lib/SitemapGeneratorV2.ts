@@ -2,18 +2,18 @@ import fs from 'fs';
 import { BankMap } from '../bank_data/api/bankMap';
 import { BankModel } from '../bank_data/api/BankModel';
 import { AllBanksList } from '../bank_data/allBankList';
+import path from 'path';
 const bankList = AllBanksList;
 
 async function init(){
-    try {
-        // console.log(Object.keys(AllBankList.))
-        const banks = await bankDataLoader(0, Object.keys(bankList));
-        const nameList: string[] = banks?.map((b, index) => `${index} => ${b.BANK}`)||[];
-        await writeBankData(nameList.join('\n'))
-        
-    } catch (error) {
-        console.error(error);
-    }
+   
+    let currentFileIndex = 0;
+    let currentFile = null;
+
+    await sitemapByBankCode('ABHY').then(val => {
+        const sitmapArr = getSitmap(val);
+        writeBankData(sitmapWrapper(sitmapArr), 'abhy.xml');
+    })
 }
 
 async function bankDataLoader(currentIndex: number, codelist: string[]){
@@ -33,13 +33,38 @@ async function bankDataLoader(currentIndex: number, codelist: string[]){
     }
 }
 
-async function writeBankData(data: string){
+async function writeBankData(data: string, filename?:string){
     try {
         console.log("Start writing")
-        fs.writeFileSync('banklist.txt', data);
+        const p = path.join('public', filename||'sitemap.xml')
+        fs.writeFileSync(p, data);
     } catch (error) {
         console.error(error)
     }
+}
+
+function getSitmap(banks: BankModel[]){
+    const sitemapArray = banks.map(bank => {
+        const url = `${bank.BANK}/${bank.STATE}/${bank.DISTRICT}/${bank.BRANCH}`.toLowerCase().replaceAll('&', '&amp;').replaceAll('-', '').trim()
+        const str = `<url><loc>https://www.findifscode.in/${encodeURI(url)}</loc><lastmod>${new Date().toISOString()}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>`
+        return str;
+    });
+    return sitemapArray;
+}
+
+async function sitemapByBankCode(code: string){
+    const bankData = BankMap[code as keyof typeof BankMap];
+    const data: {[key:string]:BankModel} = await (await bankData()).default;
+    const values = Object.values(data);
+    return values;
+}
+
+ function sitmapWrapper(data: string[]|string){
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    ${typeof data === 'object' && Array.isArray(data) ?  data.join('\n') : data}
+    </urlset>`;
+    return sitemap;
 }
 
 

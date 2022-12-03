@@ -2,6 +2,7 @@ import BankService from "../data/BankService";
 import fs from 'fs';
 import SitemapGeneratorV2 from "./SitemapGeneratorV2";
 
+
 async function generate(bankList: string[], index: number){
     let urls: string[] = [];
     const bankName = bankList[index];
@@ -38,7 +39,7 @@ export default async function generateSitemap(){
     // </urlset>`;
     // await saveXmlFile(sitemap);
     // return sitemap;
-    // SitemapGeneratorV2.init();
+    SitemapGeneratorV2.init();
     return true;
 }
 
