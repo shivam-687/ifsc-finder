@@ -2,9 +2,10 @@ import React from 'react'
 
 const ContentComp = () => {
     return (
-        <section className="container mx-auto flex justify-center px-5 mt-28">
+        <section className="container mx-auto flex justify-center px-5 mt-28 mb-28">
             <div className='border border-gray-300 rounded-xl p-5 shadow-lg shadow-primary/20'>
-                <article className='prose prose-gray lg:prose-xl prose-thead:bg-slate-400' aria-details='IFSC Code' >
+                <article className='prose prose-neutral lg:prose-xl prose-thead:bg-slate-400' aria-details='IFSC Code' >
+                    <h1 className='text-center'>Learn About IFSC</h1>
                     <h2>What is IFSC (Indian Finance Security Code)</h2>
                     <p>
                         For online fund transfers made through NEFT, RTGS, and IMPS, a special 11-digit alphanumeric code called the Indian Financial System Code (IFSC) is utilised.

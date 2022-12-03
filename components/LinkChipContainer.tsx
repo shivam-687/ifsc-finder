@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import LinkChip, { LinkChipProps } from './LinkChip'
 
 export type LinkChipContainerProps = {
@@ -6,6 +6,11 @@ export type LinkChipContainerProps = {
 }
 
 const LinkChipContainer = (props: LinkChipContainerProps) => {
+    const [chips, setChips] = useState<LinkChipProps[]>([]);
+
+    useEffect(()=>{
+        setChips(chips)
+    }, [props])
   return (
     <div className='container mx-auto w-full grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-5 px-5'>
         {
