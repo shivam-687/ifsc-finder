@@ -7,6 +7,7 @@ import { BankModel } from '../../../../../bank_data/api/BankModel'
 import IfscSearch from '../../../../../components/IfscSearch'
 import ReasultBox from '../../../../../components/ReasultBox'
 import BankService from '../../../../../data/BankService'
+import { isEqual } from '../../../../../lib/isEqual'
 import { BankDataItem } from '../../../../../models/BankDataItem'
 
 
@@ -31,7 +32,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     const district = ctx.query['district'] as string;
     const branch = ctx.query['branch'] as string;
     // console.log("BANK FOUND::", bank, state, district, branch)
-    if (!bank || bank.trim() === '' || !(await BankApi.getAllbankList()).find(val => val.toLowerCase() === bank.toLowerCase()) || !state || !district || !branch) return { notFound: true }
+    if (!bank || bank.trim() === '' || !(await BankApi.getAllbankList()).find(val => isEqual(val, bank)) || !state || !district || !branch) return { notFound: true }
     const info = await BankApi.getBank(bank, state, district, branch) || null
     // console.log("DATA:::", info)
     return {

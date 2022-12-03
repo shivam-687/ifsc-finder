@@ -9,6 +9,7 @@ import BankService from '../../data/BankService'
 import {MdLocationOn} from 'react-icons/md';
 import LinkChipContainer from '../../components/LinkChipContainer'
 import { BankApi } from '../../bank_data/api/BankDataApi'
+import { isEqual } from '../../lib/isEqual'
 
 
 export default function BankSelected(data: {bank: string, states: string[]}) {
@@ -40,7 +41,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext){
     const bank = ctx.query['bank'] as string;
 
     
-    if(!bank || bank.trim() === '' || !(await BankApi.getAllbankList()).find(st => st.toLowerCase() === bank.toLowerCase())) return {notFound: true}
+    if(!bank || bank.trim() === '' || !(await BankApi.getAllbankList()).find(st => isEqual(st, bank))) return {notFound: true}
     const states = await BankApi.getStateListOfBank(bank);
     // console.log("States: ", states);
   return {
