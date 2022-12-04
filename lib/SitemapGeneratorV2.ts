@@ -34,7 +34,7 @@ function genSitemap(bankModels: BankModel[], options?:{limit?: number, index?: n
     const data = bankModels.length > limit ? bankModels.slice(0, 1000-1) : bankModels;
     const nextData = bankModels.length > limit ? bankModels.slice(data.length-1): undefined;
     const curIndex = options && options.index && options.index !== 0 ? options.index : 1;
-    const name = bankModels[0].BANK.replaceAll(' ', '_').toLowerCase()+'_'+curIndex+'.xml';
+    const name = bankModels[0].BANK.replaceAll(' ', '_').toLowerCase().replace(/[&\/\\#, +()$~%.'":*?<>{}]/g, '_')+'_'+curIndex+'.xml';
     try {
         const sitemapArr = getSitmap(data);
         const p = path.join('public', 'sitemaps', name);
