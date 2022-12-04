@@ -10,6 +10,7 @@ import {MdLocationOn} from 'react-icons/md'
 import LinkChipContainer from '../../../components/LinkChipContainer'
 import { BankApi } from '../../../bank_data/api/BankDataApi'
 import { isEqual } from '../../../lib/isEqual'
+import PageMeta from '../../../components/PageMeta'
 
 
 export default function StateSelected(data: {bank: string, state: string, district: string[]}) {
@@ -31,6 +32,11 @@ export default function StateSelected(data: {bank: string, state: string, distri
 
 //   console.log("Datat", data)
   return (
+    <>
+    <PageMeta
+      title={`Bank:${data.bank}, State: ${data.state}|Find all Branch Addresses, Phone, IFSC code, MICR code, findifscode.in`}
+      desc={`${data.bank} | Find All Branch Addresses, Phone, IFSC code, MICR code, of ${data.bank} and State- ${data.state} on findifscode.in`}
+     />
     <div className="flex flex-col pb-40 items-center">
       <IfscSearch bank={data.bank} state={data.state} district={data.district} />
       <div className=" mt-10 w-full">
@@ -38,6 +44,7 @@ export default function StateSelected(data: {bank: string, state: string, distri
       </div>
     
     </div>
+    </>
   )
 }
 

@@ -10,6 +10,7 @@ import { MdLocationOn } from 'react-icons/md'
 import LinkChipContainer from '../../../../components/LinkChipContainer'
 import { BankApi } from '../../../../bank_data/api/BankDataApi'
 import { isEqual } from '../../../../lib/isEqual'
+import PageMeta from '../../../../components/PageMeta'
 
 
 export default function DistrictSelected(data: { bank: string, state: string, district: string, branch: string[] }) {
@@ -30,12 +31,18 @@ export default function DistrictSelected(data: { bank: string, state: string, di
     }, [data]);
 
     return (
-        <div className="flex flex-col pb-40 items-center">
-            <IfscSearch bank={data.bank} state={data.state} district={data.district} branch={data.branch} />
-            <div className=" mt-10 w-full ">
-                <LinkChipContainer chipData={branchData} />
+        <>
+            <PageMeta
+                title={`Bank:${data.bank}, State: ${data.state}, District: ${data.district}|Find all Branch Addresses, Phone, IFSC code, MICR code, findifscode.in`}
+                desc={`${data.bank} | Find All Branch Addresses, Phone, IFSC code, MICR code, of ${data.bank}, State- ${data.state} and District- ${data.district}  on findifscode.in`}
+            />
+            <div className="flex flex-col pb-40 items-center">
+                <IfscSearch bank={data.bank} state={data.state} district={data.district} branch={data.branch} />
+                <div className=" mt-10 w-full ">
+                    <LinkChipContainer chipData={branchData} />
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

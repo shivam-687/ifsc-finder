@@ -10,6 +10,7 @@ import {MdLocationOn} from 'react-icons/md';
 import LinkChipContainer from '../../components/LinkChipContainer'
 import { BankApi } from '../../bank_data/api/BankDataApi'
 import { isEqual } from '../../lib/isEqual'
+import PageMeta from '../../components/PageMeta'
 
 
 export default function BankSelected(data: {bank: string, states: string[]}) {
@@ -28,12 +29,19 @@ export default function BankSelected(data: {bank: string, states: string[]}) {
     }
   }, [data]);
   return (
+    <>
+  
+    <PageMeta
+      title={`${data.bank}|Find all Branch Addresses, Phone, IFSC code, MICR code, findifscode.in`}
+      desc={`${data.bank} | Find All Branch Addresses, Phone, IFSC code, MICR code, of ${data.bank} on findifscode.in`}
+     />
     <div className="flex flex-col pb-40 items-center">
      <IfscSearch bank={data.bank} state={data.states} />
      <div className=" mt-10 ">
         <LinkChipContainer chipData={stateData}/>
       </div>
     </div>
+    </>
   )
 }
 

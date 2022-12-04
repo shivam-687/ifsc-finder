@@ -11,6 +11,7 @@ import LinkChipContainer from '../components/LinkChipContainer'
 import generateSitemap from '../lib/SitemapGenerator'
 import { BankApi, getBankCodeByName, getBankDataByCode, getBankInfoByName } from '../bank_data/api/BankDataApi'
 import { filterBankNameByMapFile, createAvailableBanksListFile } from '../bank_data/api/helpers'
+import PageMeta from '../components/PageMeta'
 
 
 export default function Home(data: { banks: string[] }) {
@@ -30,16 +31,19 @@ export default function Home(data: { banks: string[] }) {
     }
   }, [data]);
   return (
+    <>
+    <PageMeta
+      title={`Find IFSC, MICR Codes, Address, Phone of All Bank Branches in India, for NEFT, RTGS, ECS: findifscode.in`}
+      desc={`This website helps you to find IFSC code of all banks and braches and All Branch Addresses, Phone, IFSC code, MICR code, Find IFSC, MICR Codes, Address, All Bank Branches in India, for NEFT, RTGS, ECS Transactions`}
+     />
     <div className="flex flex-col items-center pb-40">
-
-    
-
       <IfscSearch bank={data.banks} />
       <div className="divider mt-10">OR</div>
       <div className=" mt-10 ">
         <LinkChipContainer chipData={bankData}/>
       </div>
     </div>
+    </>
   )
 }
 

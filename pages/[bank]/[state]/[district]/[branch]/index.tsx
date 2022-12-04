@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { BankApi } from '../../../../../bank_data/api/BankDataApi'
 import { BankModel } from '../../../../../bank_data/api/BankModel'
 import IfscSearch from '../../../../../components/IfscSearch'
+import PageMeta from '../../../../../components/PageMeta'
 import ReasultBox from '../../../../../components/ReasultBox'
 import BankService from '../../../../../data/BankService'
 import { isEqual } from '../../../../../lib/isEqual'
@@ -16,13 +17,19 @@ export default function BranchSelected(data: { bank: string, state: string, dist
 
 
     return (
-        <div className="flex flex-col items-center pb-40">
-            <IfscSearch bank={data.bank} state={data.state} district={data.district} branch={data.branch} />
+        <>
+            <PageMeta
+                title={`IFSC Code of - Bank: ${data.bank}, State: ${data.state}, Distric: ${data.district}, Branch: ${data.branch}`}
+                desc={`Find IFSC Code of - Bank: ${data.bank}, State: ${data.state}, Distric: ${data.district}, Branch: ${data.branch} on findifscode.in`}
+            />
+            <div className="flex flex-col items-center pb-40">
+                <IfscSearch bank={data.bank} state={data.state} district={data.district} branch={data.branch} />
 
-            {
-                data.info ? <ReasultBox info={data.info} /> : <div className='text-2xl text-center'>No Info found</div>
-            }
-        </div>
+                {
+                    data.info ? <ReasultBox info={data.info} /> : <div className='text-2xl text-center'>No Info found</div>
+                }
+            </div>
+        </>
     )
 }
 
