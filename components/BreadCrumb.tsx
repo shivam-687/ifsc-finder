@@ -25,7 +25,7 @@ const BreadCrumb = () => {
                 temp.push({ lable: k as string, link: val as string });
                 // console.log("Route", val)
             })
-            console.log("Temp", temp);
+            // console.log("Temp", temp);
             setRouteArr(temp);
         }else{
             setRouteArr(temp);

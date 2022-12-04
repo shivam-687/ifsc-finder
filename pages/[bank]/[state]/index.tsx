@@ -11,6 +11,8 @@ import LinkChipContainer from '../../../components/LinkChipContainer'
 import { BankApi } from '../../../bank_data/api/BankDataApi'
 import { isEqual } from '../../../lib/isEqual'
 import PageMeta from '../../../components/PageMeta'
+import ContentComp from '../../../components/ContentComp'
+import HeroTitle from '../../../components/HeroTitle'
 
 
 export default function StateSelected(data: {bank: string, state: string, district: string[]}) {
@@ -38,12 +40,13 @@ export default function StateSelected(data: {bank: string, state: string, distri
       desc={`${data.bank} | Find All Branch Addresses, Phone, IFSC code, MICR code, of ${data.bank} and State- ${data.state} on findifscode.in`}
      />
     <div className="flex flex-col pb-40 items-center">
+      <HeroTitle/>
       <IfscSearch bank={data.bank} state={data.state} district={data.district} />
       <div className=" mt-10 w-full">
         <LinkChipContainer chipData={districtData}/>
       </div>
-    
     </div>
+    <ContentComp/>
     </>
   )
 }

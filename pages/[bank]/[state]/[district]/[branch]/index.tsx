@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { BankApi } from '../../../../../bank_data/api/BankDataApi'
 import { BankModel } from '../../../../../bank_data/api/BankModel'
+import ContentComp from '../../../../../components/ContentComp'
+import HeroTitle from '../../../../../components/HeroTitle'
 import IfscSearch from '../../../../../components/IfscSearch'
 import PageMeta from '../../../../../components/PageMeta'
 import ReasultBox from '../../../../../components/ReasultBox'
@@ -23,12 +25,14 @@ export default function BranchSelected(data: { bank: string, state: string, dist
                 desc={`Find IFSC Code of - Bank: ${data.bank}, State: ${data.state}, Distric: ${data.district}, Branch: ${data.branch} on findifscode.in`}
             />
             <div className="flex flex-col items-center pb-40">
+                <HeroTitle/>
                 <IfscSearch bank={data.bank} state={data.state} district={data.district} branch={data.branch} />
 
                 {
                     data.info ? <ReasultBox info={data.info} /> : <div className='text-2xl text-center'>No Info found</div>
                 }
             </div>
+            <ContentComp/>
         </>
     )
 }

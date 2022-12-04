@@ -14,7 +14,7 @@ const LinkChip = (props: PropsWithChildren<LinkChipProps>) => {
             {
                 props.icon && !props.image && <span className='text-4xl mr-2'>{props.icon}</span>
             }
-            <Link rel='next' className='capitalize' href={props.link}>{props.children || props.lable}</Link>
+            <Link rel='next' title={`${props.lable?.toLocaleLowerCase()} ifsc code`} className='capitalize' href={props.link}>{props.children || props.lable}</Link>
         </span>
     )
 }

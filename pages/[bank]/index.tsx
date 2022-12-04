@@ -11,6 +11,8 @@ import LinkChipContainer from '../../components/LinkChipContainer'
 import { BankApi } from '../../bank_data/api/BankDataApi'
 import { isEqual } from '../../lib/isEqual'
 import PageMeta from '../../components/PageMeta'
+import HeroTitle from '../../components/HeroTitle'
+import ContentComp from '../../components/ContentComp'
 
 
 export default function BankSelected(data: {bank: string, states: string[]}) {
@@ -32,15 +34,17 @@ export default function BankSelected(data: {bank: string, states: string[]}) {
     <>
   
     <PageMeta
-      title={`${data.bank}|Find all Branch Addresses, Phone, IFSC code, MICR code, findifscode.in`}
-      desc={`${data.bank} | Find All Branch Addresses, Phone, IFSC code, MICR code, of ${data.bank} on findifscode.in`}
+      title={`${data.bank} ifsc code`}
+      desc={`${data.bank} | Find ${data.bank} ifsc code , phone, branch micr code on findifscode.in`}
      />
     <div className="flex flex-col pb-40 items-center">
+      <HeroTitle/>
      <IfscSearch bank={data.bank} state={data.states} />
      <div className=" mt-10 ">
         <LinkChipContainer chipData={stateData}/>
       </div>
     </div>
+    <ContentComp/>
     </>
   )
 }
