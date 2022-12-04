@@ -39,7 +39,7 @@ export default async function generateSitemap(){
     // </urlset>`;
     // await saveXmlFile(sitemap);
     // return sitemap;
-    SitemapGeneratorV2.init();
+    SitemapGeneratorV2.initIndexing();
     return true;
 }
 
