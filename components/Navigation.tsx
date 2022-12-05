@@ -21,6 +21,10 @@ const Navigation = () => {
     {
       link: 'about_ifsc',
       lable: 'What is IFSC'
+    },
+    {
+      link: 'search-by-ifsc-code',
+      lable: 'Search By IFSC'
     }
   ]
 

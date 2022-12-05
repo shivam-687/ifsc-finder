@@ -13,8 +13,7 @@ const Navlink = (props: NavlinkProps) => {
     const router = useRouter();
 
     useEffect(() => {
-        // console.log('Path', router.asPath)
-      if(router.asPath.includes(props.link)){
+      if(router.asPath.startsWith(props.link)){
         setIsActive(true);
       }else{
         setIsActive(false)
