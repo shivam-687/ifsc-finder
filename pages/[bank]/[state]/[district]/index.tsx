@@ -39,13 +39,17 @@ export default function DistrictSelected(data: { bank: string, state: string, di
                 desc={`${data.bank} | Find All Branch Addresses, Phone, IFSC code, MICR code, of ${data.bank}, State- ${data.state} and District- ${data.district}  on findifscode.in`}
             />
             <div className="flex flex-col pb-40 items-center">
-                <HeroTitle/>
+                <HeroTitle />
                 <IfscSearch bank={data.bank} state={data.state} district={data.district} branch={data.branch} />
                 <div className=" mt-10 w-full ">
+                    <div className="divider mt-10">OR</div>
+                    <div className="container mx-auto px-5 mb-10">
+                        <h2 className='font-bold text-2xl text-center'>Branchwise list of <span className='capitalize'>{data.bank}</span> in  <span className='capitalize'>{data.district}</span> </h2>
+                    </div>
                     <LinkChipContainer chipData={branchData} />
                 </div>
             </div>
-            <ContentComp/>
+            <ContentComp />
         </>
     )
 }

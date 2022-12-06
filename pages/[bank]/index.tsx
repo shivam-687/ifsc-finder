@@ -41,6 +41,10 @@ export default function BankSelected(data: {bank: string, states: string[]}) {
       <HeroTitle/>
      <IfscSearch bank={data.bank} state={data.states} />
      <div className=" mt-10 ">
+     <div className="divider mt-10">OR</div>
+        <div className="container px-5 mb-10">
+          <h2 className='font-bold text-2xl text-center'><span className='capitalize'>{data.bank}</span> Statewise List </h2>
+        </div>
         <LinkChipContainer chipData={stateData}/>
       </div>
     </div>

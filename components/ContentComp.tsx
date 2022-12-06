@@ -94,7 +94,20 @@ const ContentComp = () => {
                         </p>
                     </div>
 
+                    <div  aria-details='What is RTGS Code?'>
+                        <h2>What is RTGS?</h2>
+                        <p>The Real Time Gross Settlement (RTGS) is an electronic system for fund transfers that allows you to transfer funds in one account of a bank to another. With the help of the internet banking service, you are able to quickly transfer funds via RTGS by yourself. The transactions made through RTGS are settled in real-time. The funds will be credited to the account of the beneficiary within 30 minutes.</p>
+                        <p>A minimum transfer amount via RTGS amounts to Rs. 2 lakhs, and there is no maximum amount. In order to initiate a fund transfer using RTGS the recipient must include the name of the beneficiary as well as the bank's account number, IFSC code and account number. To be able to conduct transactions with RTGS both banks where the remitter as well as the beneficiary's account is must have an RTGS facility.</p>
+                        <p>Because the transfer of funds through RTGS is regulated by Reserve Bank of India (RBI) The transactions cannot be changed and, therefore they are final. Based on the amount of transaction the remitter may be subject to charges. RTGS is specifically designed for transactions with a large volume. RTGS service will be accessible only on days that are working.</p>
+                    </div>
+                    <div  aria-details='What is NEFT Code?'>
+                        <h2>What is NEFT code?</h2>
 
+                        <p>National Electronic Funds Transfer (NEFT) is an online fund transfer system supported by Reserve Bank of India (RBI). By using NEFT, you can easily transfer funds from one bank account to another bank account. NEFT functions on Deferred Net Settlement (DNS) in which transactions are settled in batches.</p>
+                        <p>Funds can also be transferred via NEFT in online by using internet banking service. There is no maximum and minimum limit for transactions made in NEFT.</p>
+                        <p>Nevertheless, the maximum transaction is limited to Rs. 50,000 per transaction. Depending on the amount of transaction, charges are applied. NEFT is ideal for small and medium amount transfer between bank accounts. In order to transfer funds through NEFT, the remitter should have beneficiary's details such as name, bank name, account number and IFSC code.</p>
+                        <p>NEFT works on hourly batches. For fund transfer to take place, both the banks where the remitter and beneficiary have their account should have NEFT service. The transferred funds will be credited to the beneficiary's account within two days.</p>
+                    </div>
                 </article>
             </div>
         </section>

@@ -2,6 +2,7 @@ import { GetStaticPropsContext } from 'next'
 import React, { useState } from 'react'
 import { useQuery, } from 'react-query'
 import { BankModel } from '../bank_data/api/BankModel';
+import PageMeta from '../components/PageMeta';
 import SearchDataViewer from '../components/SearchDataViewer';
 
 
@@ -42,6 +43,11 @@ const SearchByIfscCode = () => {
     }
 
     return (
+        <>
+        <PageMeta
+            title="Search by IFSC Code: Search bank details by IFSC code"
+            desc="Here you can search bank detailes like MICR code, Branch name, bank phone , bank address and more by IFSC Code."
+        />
         <div className='pb-28 mb-96'>
             <div className="w-full flex items-center justify-center mt-40 mb-10">
                 <h1 className='text-6xl md:text-6xl drop-shadow  font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'>
@@ -69,6 +75,7 @@ const SearchByIfscCode = () => {
                 }
             </div>
         </div>
+        </>
     )
 }
 
