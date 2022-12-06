@@ -4,8 +4,6 @@ import ContentComp from '../components/ContentComp'
 import PageMeta from '../components/PageMeta'
 
 
-export const config = { amp: true }
-
 const about_ifsc = () => {
   return (
     <>

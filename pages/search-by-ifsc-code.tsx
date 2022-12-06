@@ -6,7 +6,6 @@ import PageMeta from '../components/PageMeta';
 import SearchDataViewer from '../components/SearchDataViewer';
 
 
-export const config = { amp: 'hybrid' }
 
 
 const SearchByIfscCode = () => {

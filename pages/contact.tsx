@@ -1,7 +1,6 @@
 import { GetStaticPropsContext } from 'next'
 import React from 'react'
 
-export const config = { amp: true }
 
 const contact = () => {
     return (

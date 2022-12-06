@@ -9,7 +9,6 @@ import React from 'react'
 // Team Find Ifsc Code.
 
 // findifscode.com is a <a href="https://interlef.com" className="link link-primary font-semibold">Interlef Web Solutions</a>. venture.
-export const config = { amp: true }
 const about = () => {
   return (
     <section className="container mx-auto flex justify-center px-5 mt-28 mb-28">
