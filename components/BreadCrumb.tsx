@@ -14,7 +14,7 @@ const BreadCrumb = () => {
     const setBredcrumbRoute = () => {
         const valueList = Object.values(query);
         const defaultVal = { lable: 'Home', link: '/' }
-        console.log(valueList)
+        // console.log(valueList)
         const temp: { lable: string, link: string }[] = [defaultVal];
         if (valueList && valueList.length > 0) { 
             valueList.forEach((k, index) => {

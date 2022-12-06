@@ -20,7 +20,7 @@ const Navlink = (props: NavlinkProps) => {
       //   console.log(link1, link2)
       //   return true;
       // };
-      console.log(link1.replace('/',''), link2.replace('/',''))
+      // console.log(link1.replace('/',''), link2.replace('/',''))
       if(link1 === '/'){
 
         return link1 === link2;
@@ -31,7 +31,7 @@ const Navlink = (props: NavlinkProps) => {
 
     useEffect(() => {
       if(isSame(router.asPath, props.link)){
-        console.log("IS SAME tru", isSame(router.asPath, props.link))
+        // console.log("IS SAME tru", isSame(router.asPath, props.link))
         setIsActive(true);
       }else{
         setIsActive(false)
