@@ -1,4 +1,7 @@
+import { GetStaticPropsContext } from 'next'
 import React from 'react'
+
+export const config = { amp: true }
 
 const contact = () => {
     return (
@@ -26,5 +29,13 @@ const contact = () => {
         </section>
     )
 }
+
+export async function getStaticProps(props: GetStaticPropsContext) {
+    return {
+        props: {
+            data: null
+        }
+    }
+  }
 
 export default contact
