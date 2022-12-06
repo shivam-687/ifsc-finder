@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const config = { amp: true }
+
 const desclaimer = () => {
     return (
         <section className="container mx-auto flex justify-center px-5 mt-28 mb-28">
@@ -15,6 +17,14 @@ const desclaimer = () => {
             </div>
         </section>
     )
+}
+
+export async function getStaticProps() {
+    return {
+        props: {
+            data: null
+        }
+    }
 }
 
 export default desclaimer

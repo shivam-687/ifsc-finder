@@ -6,6 +6,8 @@ import PageMeta from '../components/PageMeta';
 import SearchDataViewer from '../components/SearchDataViewer';
 
 
+export const config = { amp: 'hybrid' }
+
 
 const SearchByIfscCode = () => {
     const [inputValue, setInputValue] = useState<string>('');
@@ -45,7 +47,7 @@ const SearchByIfscCode = () => {
     return (
         <>
         <PageMeta
-            title="Search by IFSC Code: Search bank details by IFSC code"
+            title="Search by IFSC Code"
             desc="Here you can search bank detailes like MICR code, Branch name, bank phone , bank address and more by IFSC Code."
         />
         <div className='pb-28 mb-96'>
@@ -79,8 +81,12 @@ const SearchByIfscCode = () => {
     )
 }
 
-export async function getServersideProps(ctx: GetStaticPropsContext) {
-
+export async function getStaticProps(props: GetStaticPropsContext) {
+    return {
+        props: {
+            data: null
+        }
+    }
 }
 
 export default SearchByIfscCode

@@ -1,5 +1,11 @@
 {
- "name": "App",
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "Find Ifsc Code",
+    "short_name": "Find Ifsc Code",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "This website helps you to find IFSC code of all banks and braches and All Branch Addresses, Phone, IFSC code, MICR code, Find IFSC, MICR Codes, Address, All Bank Branches in India, for NEFT, RTGS, ECS Transactions.",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",

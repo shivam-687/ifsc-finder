@@ -1,6 +1,10 @@
+import { GetStaticPropsContext } from 'next'
 import React from 'react'
 import ContentComp from '../components/ContentComp'
 import PageMeta from '../components/PageMeta'
+
+
+export const config = { amp: true }
 
 const about_ifsc = () => {
   return (
@@ -14,6 +18,14 @@ const about_ifsc = () => {
     </div>
     </>
   )
+}
+
+export async function getStaticProps(props: GetStaticPropsContext) {
+  return {
+      props: {
+          data: null
+      }
+  }
 }
 
 export default about_ifsc
