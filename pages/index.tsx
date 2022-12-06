@@ -14,6 +14,7 @@ import { filterBankNameByMapFile, createAvailableBanksListFile } from '../bank_d
 import PageMeta from '../components/PageMeta'
 import HeroTitle from '../components/HeroTitle'
 import ContentComp from '../components/ContentComp'
+import { to_slug } from '../lib/helpers'
 
 
 export default function Home(data: { banks: string[] }) {
@@ -26,7 +27,7 @@ export default function Home(data: { banks: string[] }) {
         return {
           icon: <AiFillBank/>, 
           lable: b,
-          link: '/'+b
+          link: '/'+to_slug(b)
         } as LinkChipProps;
       });
       setBankData(linkChipData);

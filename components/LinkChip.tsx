@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React, { PropsWithChildren } from 'react'
+import { to_link } from '../lib/helpers';
 
 export type LinkChipProps = {
     image?: string;

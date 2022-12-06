@@ -13,6 +13,7 @@ import { isEqual } from '../../lib/isEqual'
 import PageMeta from '../../components/PageMeta'
 import HeroTitle from '../../components/HeroTitle'
 import ContentComp from '../../components/ContentComp'
+import { slug_to_normal, to_slug } from '../../lib/helpers'
 
 
 export default function BankSelected(data: {bank: string, states: string[]}) {
@@ -24,7 +25,7 @@ export default function BankSelected(data: {bank: string, states: string[]}) {
         return {
           icon: <MdLocationOn/>, 
           lable: b,
-          link: `/${data.bank}/${b.toLowerCase()}`
+          link: `/${to_slug(data.bank)}/${to_slug(b)}`
         } as LinkChipProps;
       });
       setStateData(linkChipData);
@@ -43,7 +44,7 @@ export default function BankSelected(data: {bank: string, states: string[]}) {
      <div className=" mt-10 ">
      <div className="divider mt-10">OR</div>
         <div className="container px-5 mb-10">
-          <h2 className='font-bold text-2xl text-center'><span className='capitalize'>{data.bank}</span> Statewise List </h2>
+          <h2 className='font-bold text-2xl text-center'><span className='capitalize'>{slug_to_normal(data.bank)}</span> Statewise List </h2>
         </div>
         <LinkChipContainer chipData={stateData}/>
       </div>

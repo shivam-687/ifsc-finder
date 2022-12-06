@@ -13,6 +13,7 @@ import { isEqual } from '../../../../lib/isEqual'
 import PageMeta from '../../../../components/PageMeta'
 import ContentComp from '../../../../components/ContentComp'
 import HeroTitle from '../../../../components/HeroTitle'
+import { slug_to_normal, to_slug } from '../../../../lib/helpers'
 
 
 export default function DistrictSelected(data: { bank: string, state: string, district: string, branch: string[] }) {
@@ -25,7 +26,7 @@ export default function DistrictSelected(data: { bank: string, state: string, di
                 return {
                     icon: <MdLocationOn />,
                     lable: b,
-                    link: `/${data.bank}/${data.state}/${data.district}/${b.toLowerCase()}`
+                    link: `/${to_slug(data.bank)}/${to_slug(data.state)}/${to_slug(data.district)}/${to_slug(b)}`
                 } as LinkChipProps;
             });
             setBranchData(linkChipData);
@@ -44,7 +45,7 @@ export default function DistrictSelected(data: { bank: string, state: string, di
                 <div className=" mt-10 w-full ">
                     <div className="divider mt-10">OR</div>
                     <div className="container mx-auto px-5 mb-10">
-                        <h2 className='font-bold text-2xl text-center'>Branchwise list of <span className='capitalize'>{data.bank}</span> in  <span className='capitalize'>{data.district}</span> </h2>
+                        <h2 className='font-bold text-2xl text-center'>Branchwise list of <span className='capitalize'>{slug_to_normal(data.bank)}</span> in  <span className='capitalize'>{slug_to_normal(data.district)}</span> </h2>
                     </div>
                     <LinkChipContainer chipData={branchData} />
                 </div>

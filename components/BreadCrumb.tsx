@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
+import { slug_to_normal } from '../lib/helpers';
 
 const BreadCrumb = () => {
     const { route, query, asPath, events } = useRouter();
@@ -15,14 +16,14 @@ const BreadCrumb = () => {
         const valueList = Object.values(query);
         const defaultVal = { lable: 'Home', link: '/' }
         // console.log(valueList)
-        const temp: { lable: string, link: string }[] = [defaultVal];
+        const temp: { lable: string, link: string }[] = [];
         if (valueList && valueList.length > 0) { 
             valueList.forEach((k, index) => {
                 let val = '/';
                 for(let i=0; i <= index; i++){
                     val+=valueList[i]+'/'
                 }
-                temp.push({ lable: k as string, link: val as string });
+                temp.push({ lable: k as string, link: slug_to_normal(val) as string });
                 // console.log("Route", val)
             })
             // console.log("Temp", temp);
