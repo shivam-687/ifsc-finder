@@ -13,6 +13,7 @@ import { isEqual } from '../../../lib/isEqual'
 import PageMeta from '../../../components/PageMeta'
 import ContentComp from '../../../components/ContentComp'
 import HeroTitle from '../../../components/HeroTitle'
+import { slug_to_normal, to_slug } from '../../../lib/helpers'
 
 
 export default function StateSelected(data: { bank: string, state: string, district: string[] }) {
@@ -25,7 +26,7 @@ export default function StateSelected(data: { bank: string, state: string, distr
         return {
           icon: <MdLocationOn />,
           lable: b,
-          link: `/${data.bank}/${data.state}/${b.toLowerCase()}`
+          link: `/${to_slug(data.bank)}/${to_slug(data.state)}/${to_slug(b)}`
         } as LinkChipProps;
       });
       setDistrictData(linkChipData);
@@ -45,7 +46,7 @@ export default function StateSelected(data: { bank: string, state: string, distr
         <div className="divider mt-10">OR</div>
         <div className=" mt-10 w-full">
           <div className="container mx-auto px-5 mb-10">
-            <h2 className='font-bold text-2xl text-center'>Districtwise list of <span className='capitalize'>{data.bank}</span> in  <span className='capitalize'>{data.state}</span> </h2>
+            <h2 className='font-bold text-2xl text-center'>Districtwise list of <span className='capitalize'>{slug_to_normal(data.bank)}</span> in  <span className='capitalize'>{slug_to_normal(data.state)}</span> </h2>
           </div>
           <LinkChipContainer chipData={districtData} />
         </div>

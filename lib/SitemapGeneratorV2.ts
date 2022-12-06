@@ -3,6 +3,7 @@ import { BankMap } from '../bank_data/api/bankMap';
 import { BankModel } from '../bank_data/api/BankModel';
 import { AllBanksList } from '../bank_data/allBankList';
 import path from 'path';
+import { to_slug } from './helpers';
 const bankList = AllBanksList;
 
 async function init() {
@@ -61,8 +62,8 @@ async function writeBankData(data: string, path: string) {
 
 function getSitmap(banks: BankModel[]) {
     const sitemapArray = banks.map(bank => {
-        const url = `${bank.BANK}/${bank.STATE}/${bank.DISTRICT}/${bank.BRANCH}`.toLowerCase().replaceAll('&', '&amp;').replaceAll('-', '').trim()
-        const str = `<url><loc>https://www.findifscode.in/${encodeURI(url)}</loc><lastmod>${new Date().toISOString()}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>`
+        const url = `${to_slug(bank.BANK)}/${to_slug(bank.STATE)}/${to_slug(bank.DISTRICT)}/${to_slug(bank.BRANCH)}`
+        const str = `<url><loc>https://www.findifscode.in/${url}</loc><lastmod>${new Date().toISOString()}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>`
         return str;
     });
     return sitemapArray;

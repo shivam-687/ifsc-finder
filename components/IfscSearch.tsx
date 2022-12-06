@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { ChangeEvent, useEffect, useState } from 'react'
+import { to_link } from '../lib/helpers'
 
 export type IfscSearchProps = {
     bank?: string|string[],
@@ -21,7 +22,7 @@ const IfscSearch = (props: IfscSearchProps) => {
     
 
     const handleOnSelect = (e: ChangeEvent<HTMLSelectElement>) => {
-        console.log("Event ", e.currentTarget.value);
+        //console.log("Event ", e.currentTarget.value);
         const value = e.currentTarget.value;
 
         if(value.trim() !== ''){
