@@ -61,7 +61,7 @@ class MyDocument extends Document {
         return (
             <Html data-theme="interlef_light" lang='en'>
                 <Head >
-                    <meta charSet="UTF-16BE"/>
+                    <meta charSet="utf-8"/>
                     <Script id="gt-manager" strategy='lazyOnload'>
                         {
                             `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

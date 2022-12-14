@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import React from 'react'
-import { breadCrumbSnippet } from '../lib/schema-generators/breadCrumbSnippet'
 
 export type PageMetaProps = {
   title: string,
@@ -24,11 +23,11 @@ const PageMeta = (props: PageMetaProps) => {
 
 
     </Head>
-    <Script type='application/ld+json' id='breadcrumb-ld-json' dangerouslySetInnerHTML={{
+    {/* <Script type='application/ld+json' id='breadcrumb-ld-json' dangerouslySetInnerHTML={{
       __html: JSON.stringify(breadCrumbSnippet('https://findifscode.in', query), null, '\t')
-    }}>
+    }}> */}
 
-    </Script>
+    {/* </Script> */}
     </>
   )
 }
