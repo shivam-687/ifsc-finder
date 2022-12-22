@@ -9,6 +9,7 @@ import HeroTitle from '../../../../../components/HeroTitle'
 import IfscSearch from '../../../../../components/IfscSearch'
 import PageMeta from '../../../../../components/PageMeta'
 import ReasultBox from '../../../../../components/ReasultBox'
+import ResultTable from '../../../../../components/ResultTable'
 import BankService from '../../../../../data/BankService'
 import { isEqual } from '../../../../../lib/isEqual'
 import { BankDataItem } from '../../../../../models/BankDataItem'
@@ -29,7 +30,7 @@ export default function BranchSelected(data: { bank: string, state: string, dist
                 <IfscSearch bank={data.bank} state={data.state} district={data.district} branch={data.branch} />
 
                 {
-                    data.info ? <ReasultBox info={data.info} /> : <div className='text-2xl text-center'>No Info found</div>
+                    data.info ? <ResultTable info={data.info} /> : <div className='text-2xl text-center'>No Info found</div>
                 }
             </div>
             <ContentComp/>
