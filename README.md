@@ -1,6 +1,8 @@
 ## Bank IFSC Code Finder
 This project is a simple and easy-to-use platform to find the Indian Financial System Code (IFSC) of a bank by entering the bank's address or to find the details of a bank by entering its IFSC code. The platform is built using the latest technologies, including Next.js, Tailwind CSS, and React.
 
+![Indian Bank IFSC Code finder!](https://www.findifscode.in/assets/images/site-image.png "Bank IFSC Code Finder")
+
 > ### Features
 > - Search for the IFSC code of a bank by entering the bank's address
 > - Search for the details of a bank by entering its IFSC code
