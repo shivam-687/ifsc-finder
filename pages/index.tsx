@@ -47,7 +47,6 @@ export default function Home(data: { banks: string[] }) {
         <LinkChipContainer chipData={bankData}/>
       </div>
     </div>
-    <ContentComp/>
     </>
   )
 }

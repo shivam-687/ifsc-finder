@@ -50,7 +50,6 @@ export default function DistrictSelected(data: { bank: string, state: string, di
                     <LinkChipContainer chipData={branchData} />
                 </div>
             </div>
-            <ContentComp />
         </>
     )
 }
