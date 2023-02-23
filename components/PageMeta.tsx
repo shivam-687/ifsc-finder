@@ -21,7 +21,6 @@ const PageMeta = (props: PageMetaProps) => {
       <meta name="description" content={props.desc} />
       <title>{props.title}</title>
 
-
     </Head>
     {/* <Script type='application/ld+json' id='breadcrumb-ld-json' dangerouslySetInnerHTML={{
       __html: JSON.stringify(breadCrumbSnippet('https://findifscode.in', query), null, '\t')
