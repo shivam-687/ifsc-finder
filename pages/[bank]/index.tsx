@@ -49,7 +49,6 @@ export default function BankSelected(data: {bank: string, states: string[]}) {
         <LinkChipContainer chipData={stateData}/>
       </div>
     </div>
-    <ContentComp/>
     </>
   )
 }

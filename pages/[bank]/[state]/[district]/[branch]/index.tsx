@@ -33,7 +33,6 @@ export default function BranchSelected(data: { bank: string, state: string, dist
                     data.info ? <ResultTable info={data.info} /> : <div className='text-2xl text-center'>No Info found</div>
                 }
             </div>
-            <ContentComp/>
         </>
     )
 }
