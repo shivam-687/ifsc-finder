@@ -36,8 +36,8 @@ export default function Home(data: { banks: string[] }) {
   return (
     <>
     <PageMeta
-      title={`Find IFSC, MICR Codes, Address, Phone of All Bank Branches in India, for NEFT, RTGS, ECS: findifscode.in`}
-      desc={`This website helps you to find IFSC code of all banks and braches and All Branch Addresses, Phone, IFSC code, MICR code, Find IFSC, MICR Codes, Address, All Bank Branches in India, for NEFT, RTGS, ECS Transactions`}
+      title={`IFSC Code Finder Tool - Discover Bank Codes in Seconds | findifcode.in`}
+      desc={`Searching for an IFSC code in India? Look no further than our bank branch locator tool. With coverage of banks like Andhra Bank, SBI Bank, and Ubi, we make it easy to find the right code for your branch. Plus, our user-friendly interface and fast results ensure a seamless experience.`}
      />
     <div className="flex flex-col items-center pb-40">
       <HeroTitle/>

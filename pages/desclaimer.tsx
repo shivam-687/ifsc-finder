@@ -1,8 +1,14 @@
 import React from 'react'
+import PageMeta from '../components/PageMeta'
 
 
 const desclaimer = () => {
     return (
+        <>
+        <PageMeta
+            title='Disclaimer - Learn About Our Terms and Conditions'
+            desc='Before using our IFSC code finder tool, please read our disclaimer page to learn about our terms and conditions. We strive to provide accurate information on bank branch codes in India, but we cannot guarantee the accuracy, completeness, or timeliness of the information provided. By using our website, you agree to our disclaimer and our terms of service.'
+        />
         <section className="container mx-auto flex justify-center px-5 mt-28 mb-28">
             <div className='border border-gray-300 rounded-xl p-5 shadow-lg shadow-primary/20'>
                 <div className='prose prose-neutral lg:prose-xl prose-thead:bg-slate-400'>
@@ -15,6 +21,7 @@ const desclaimer = () => {
                 </div>
             </div>
         </section>
+        </>
     )
 }
 
